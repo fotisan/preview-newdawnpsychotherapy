@@ -49,7 +49,6 @@
           <p class="lead">
             Empathetic, mindfulness-based therapy for people who want clarity, healing, and a life that truly feels like theirs.
           </p>
-
           <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
             <a class="btn btn-primary" href="#contact">Start with a message</a>
             <a class="btn btn-ghost" href="#services">Explore services</a>
@@ -60,22 +59,12 @@
           <div class="media-frame">
             <img src="hero.webp" alt="Therapy space" loading="eager" />
           </div>
-          
           <div class="hero-card">
             <h4 style="margin:0 0 0.5rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; color:var(--mint);">Focus Areas</h4>
             <ul class="checklist">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--mint)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Trauma & Grief
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--mint)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Anxiety & Depression
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--mint)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Identity Transitions
-              </li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--mint)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Trauma & Grief</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--mint)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Anxiety & Depression</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--mint)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Identity Transitions</li>
             </ul>
           </div>
         </div>
@@ -94,7 +83,6 @@
             My goal is to help you reach your potential and build a life that feels truly fulfilling. Together, we’ll uncover and transform what interferes with that process.
           </p>
         </div>
-
         <div class="split-media reveal">
           <div class="media-frame">
             <img src="approach.webp" alt="Calm reflection" loading="lazy" />
@@ -150,7 +138,6 @@
           <p>
             Psychedelic-assisted psychotherapy is an emerging approach combining medicine and psychotherapy for conditions like PTSD and depression.
           </p>
-          
           <div class="stack-cards">
             <div class="mini-card">
               <h4>Ketamine</h4>
@@ -161,12 +148,10 @@
               <p style="font-size:0.9rem;">Research supports its use for increasing openness and connectedness.</p>
             </div>
           </div>
-          
           <div style="margin-top: 2rem;">
             <a class="btn btn-primary" href="#contact">Request Consultation</a>
           </div>
         </div>
-
         <div class="split-media reveal">
           <div class="media-frame">
             <img src="psychedelic.webp" alt="Nature texture" loading="lazy" />
@@ -279,11 +264,12 @@
 
     <footer class="footer">
       <div class="container footer-row">
-        <div>
-          <p style="margin:0; font-weight:700; color:var(--ink);">Dr. Leila Ortiz, PhD</p>
-          <p style="margin:0.25rem 0 0; font-size:0.85rem;">Mindfulness-based psychotherapy.</p>
+        <div class="footer-brand">
+          <h4>Dr. Leila Ortiz, PhD</h4>
+          <p>Mindfulness-based psychotherapy & integration.</p>
         </div>
         <div class="footer-links">
+          <a href="#approach">Approach</a>
           <a href="#services">Services</a>
           <a href="#team">Team</a>
           <a href="#contact">Contact</a>
@@ -293,15 +279,12 @@
   </main>
 
   <script>
-    /* Simple JS for reveal and mobile menu */
     (() => {
-      // Scroll effect for header
       const header = document.querySelector('.site-header');
       window.addEventListener('scroll', () => {
         header.classList.toggle('is-scrolled', window.scrollY > 20);
       });
 
-      // Reveal animation
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -313,12 +296,10 @@
       
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Mobile Menu
       const toggle = document.querySelector('.nav-toggle');
       const nav = document.querySelector('.nav');
       toggle.addEventListener('click', () => {
         nav.classList.toggle('is-open');
-        // Simple animation toggle for lines could be added here
       });
       nav.addEventListener('click', (e) => {
         if(e.target.matches('a')) nav.classList.remove('is-open');
