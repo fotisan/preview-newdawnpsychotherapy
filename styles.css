@@ -1,9 +1,6 @@
 /* ====== Design tokens (2026 Calm Light Theme) ====== */
 :root {
-  /* --bg: Warm Cream - Ενιαίο φόντο παντού */
   --bg: #F9F8F4;
-  
-  /* Panels: Πιο καθαρό λευκό για κοντράστ στο ενιαίο φόντο */
   --panel: #FFFFFF;
   
   /* Typography Colors */
@@ -18,13 +15,12 @@
   
   --radius-xl: 1.75rem;  
   --radius-lg: 1.125rem; 
-  --radius-md: 0.875rem; 
 
-  /* Shadows: Πολύ απαλές για να ξεχωρίζουν τα στοιχεία χωρίς borders */
+  /* Shadows */
   --shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.05);
   --shadow2: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
 
-  --container: 74rem;    /* Λίγο πιο φαρδύ για το zigzag team layout */
+  --container: 74rem;    
   --gap: 1.125rem;       
 
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
@@ -43,7 +39,6 @@ html {
 body {
   margin: 0;
   font-family: var(--font);
-  /* Ενιαίο φόντο ΧΩΡΙΣ διαχωριστικά gradients που δημιουργούν γραμμές */
   background: var(--bg);
   color: var(--ink);
   line-height: 1.5;
@@ -67,7 +62,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-inline: auto;
 }
 
-/* Soft background orbs - Παραμένουν για ατμόσφαιρα αλλά πιο διακριτικά */
+/* Background Orbs */
 .bg-orb {
   position: fixed;
   inset: auto;
@@ -97,11 +92,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: rgba(249, 248, 244, 0.85); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: none; /* Αφαίρεση περιγράμματος */
+  border: none;
   transition: box-shadow .3s ease;
 }
 .site-header.is-scrolled {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.03); /* Πολύ ελαφριά σκιά μόνο στο scroll */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 .header-row {
@@ -112,15 +107,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 1rem 0;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  /* Κείμενο αφαιρέθηκε, μόνο εικόνα */
-}
 .brand-mark {
-  /* Προσαρμογή για να φαίνεται καθαρά το logo */
-  width: auto; 
-  height: 3.5rem; /* Λίγο πιο μεγάλο */
+  height: 3.5rem;
   display: flex;
   align-items: center;
 }
@@ -158,9 +146,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .nav-toggle-lines span:nth-child(1) { top: 0; }
 .nav-toggle-lines span:nth-child(2) { top: 8px; }
-.nav-toggle-lines span:nth-child(3) { top: 16px; } /* Πρόσθεσα 3η γραμμή για κλασικό burger */
+.nav-toggle-lines span:nth-child(3) { top: 16px; }
 
-/* Nav Drawer (Mobile) */
+/* Nav Drawer */
 .nav {
   position: fixed;
   inset: 0;
@@ -177,13 +165,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .nav.is-open { transform: translateX(0); }
 
-/* Close button inside nav logic handled by toggle z-index/position in JS usually, 
-   but here we keep simple toggle logic. */
-
-.nav-link {
-  color: var(--ink);
-  font-weight: 500;
-}
+.nav-link { color: var(--ink); font-weight: 500; }
 .nav-cta {
   margin-top: 1rem;
   padding: 1rem;
@@ -195,7 +177,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
 }
 
-/* Desktop Nav */
 @media (min-width: 980px) {
   .nav-toggle { display: none; }
   .nav {
@@ -214,15 +195,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   }
 }
 
-/* ====== Sections (Unified) ====== */
+/* ====== Sections ====== */
 .section {
   position: relative;
   z-index: 1;
   padding: 6rem 0;
-  border: none; /* Κανένα border */
-}
-.section--muted {
-  background: transparent; /* Όλα διαφανή για να φαίνεται το body bg */
 }
 
 .eyebrow {
@@ -245,20 +222,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ====== Hero ====== */
-.hero {
-  padding: 4rem 0 6rem;
-}
+.hero { padding: 4rem 0 6rem; }
+.hero-grid { display: grid; gap: 3rem; }
 
-.hero-grid {
-  display: grid;
-  gap: 3rem;
-}
-
-/* Desktop Hero Logic */
 @media (min-width: 980px) {
   .hero-grid {
     grid-template-columns: 1fr 1fr;
-    /* Ευθυγράμμιση κέντρο */
     align-items: center; 
     gap: 4rem;
   }
@@ -270,45 +239,34 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-bottom: 1.5rem;
 }
 
-/* Image Handling Styles */
 .media-frame {
   position: relative;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  /* Διαφανές φόντο για να μην φαίνεται πλαίσιο αν η εικόνα δεν γεμίζει */
   background: transparent; 
   box-shadow: var(--shadow);
 }
+.media-frame img { width: 100%; display: block; }
 
-.media-frame img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Specific Hero Image Logic for Desktop */
 @media (min-width: 980px) {
   .hero-media .media-frame {
     height: 100%;
-    /* Εξασφαλίζει ότι παίρνει το ύψος του διπλανού κειμένου */
     max-height: 80vh; 
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: none; /* Αφαιρούμε σκιά πλαισίου για πιο φυσικό look */
+    box-shadow: none; 
   }
   .hero-media .media-frame img {
-    /* ΔΕΝ ΚΟΒΕΤΑΙ */
     object-fit: contain; 
     width: 100%;
     height: 100%;
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow); /* Η σκιά μπαίνει στην ίδια την εικόνα */
+    box-shadow: var(--shadow); 
   }
 }
 
 .hero-card {
-  /* Η κάρτα check list */
   margin-top: -2rem;
   margin-left: 2rem;
   position: relative;
@@ -328,29 +286,26 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 0.9rem;
 }
 
-/* ====== Split Sections & Image Adjustments ====== */
+/* ====== Split Sections ====== */
 .split { display: grid; gap: 3rem; }
 
 @media (min-width: 980px) {
   .split {
     grid-template-columns: 1fr 1fr;
-    align-items: center; /* Κεντράρισμα κάθετο */
+    align-items: center; 
     gap: 5rem;
   }
   .split--reverse .split-copy { order: 2; }
   .split--reverse .split-media { order: 1; }
 }
 
-/* --- Approach Image Adjustment --- */
 @media (min-width: 980px) {
   #approach .media-frame {
-    /* Μικραίνουμε κατά 1/4 (75%) */
     width: 75%;
-    margin: 0 auto; /* Κεντράρισμα */
+    margin: 0 auto; 
   }
 }
 
-/* --- Psychedelic Image Adjustment --- */
 @media (min-width: 980px) {
   #psychedelic .split-media {
     height: 100%;
@@ -359,22 +314,19 @@ ul { margin: 0; padding: 0; list-style: none; }
     justify-content: center;
   }
   #psychedelic .media-frame {
-    /* Να έχει ύψος όσο το κείμενο δίπλα */
     height: 100%;
-    max-height: 600px; /* Όριο ασφαλείας */
+    max-height: 600px; 
     box-shadow: none;
     background: transparent;
   }
   #psychedelic .media-frame img {
     width: 100%;
     height: 100%;
-    /* ΝΑ ΦΑΙΝΕΤΑΙ ΟΛΟΚΛΗΡΗ */
     object-fit: contain; 
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow);
   }
   
-  /* Στο psychedelic section τα καρτάκια κάτω από την εικόνα */
   .stack-cards {
     margin-top: 1.5rem;
     display: flex; 
@@ -384,23 +336,18 @@ ul { margin: 0; padding: 0; list-style: none; }
   .mini-card { flex: 1; }
 }
 
-/* ====== Cards (Services) with SVGs ====== */
-.cards-grid {
-  display: grid;
-  gap: 1.5rem;
-}
+/* ====== Services Cards ====== */
+.cards-grid { display: grid; gap: 1.5rem; }
 @media (min-width: 820px) {
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .cards-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .card {
   border-radius: 1.5rem;
   padding: 2rem;
   background: #fff;
-  box-shadow: var(--shadow2); /* Απαλή σκιά αντί για border */
-  border: 1px solid rgba(255,255,255,0.5); /* Πολύ απαλό border για definition */
+  box-shadow: var(--shadow2); 
+  border: 1px solid rgba(255,255,255,0.5); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -413,22 +360,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1rem;
-  background: rgba(58, 125, 99, 0.08); /* Mint low opacity */
+  background: rgba(58, 125, 99, 0.08); 
   display: grid;
   place-items: center;
   margin-bottom: 1.25rem;
   color: var(--mint);
 }
-.card-icon-wrap svg {
-  width: 1.75rem;
-  height: 1.75rem;
-  fill: currentColor;
-}
-
+.card-icon-wrap svg { width: 1.75rem; height: 1.75rem; fill: currentColor; }
 .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
-/* ====== Team Layout (Zig-Zag) ====== */
-
+/* ====== Team (Corrected) ====== */
 .team-grid {
   display: flex;
   flex-direction: column;
@@ -440,75 +381,71 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow2);
-  /* Mobile default: Stacked */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Mobile first */
 }
 
+/* Mobile Image Settings (Portrait) */
 .team-photo {
   width: 100%;
   position: relative;
-  background: #f0f0f0;
+  background: #E5E7EB; /* Γκρι φόντο αν αργήσει να φορτώσει */
 }
-
-/* Mobile Specific Team Image Rules */
 .team-photo img {
   width: 100%;
   height: auto;
-  /* Portrait Aspect Ratio for Mobile */
-  aspect-ratio: 4/5; 
-  /* Ολόκληρη εικόνα */
-  object-fit: contain; 
-  /* Scale up slightly if container allows, but width 100% usually caps it. 
-     To make it "larger", we ensure no padding constrains it. */
+  aspect-ratio: 4/5; /* Portrait σε κινητά */
+  object-fit: cover; /* Γεμίζει το κουτί χωρίς να χαλάει */
   display: block;
 }
 
-.team-body {
-  padding: 2rem;
-}
+.team-body { padding: 2rem; }
 
-/* Desktop Zig-Zag Logic */
+/* Desktop Settings (Strict Dimensions) */
 @media (min-width: 980px) {
   .team-grid {
-    gap: 6rem; /* Περισσότερος χώρος ανάμεσα στα μέλη */
+    gap: 4rem; 
   }
 
   .team-card {
-    flex-direction: row; /* Side by side */
-    align-items: center;
-    background: transparent; /* No card bg on desktop, just cleaner layout */
-    box-shadow: none;
-    gap: 4rem;
+    flex-direction: row; /* Πλάι πλάι */
+    align-items: stretch; /* Να έχουν ίδιο ύψος */
+    /* Σταθερό ύψος για όλες τις κάρτες ώστε να μην είναι "τεράστιες" */
+    height: 400px; 
+    background: #fff; 
   }
 
-  /* Εικόνα */
   .team-photo {
-    flex: 1;
-    border-radius: var(--radius-xl);
+    flex: 0 0 50%; /* Ακριβώς το 50% του πλάτους */
+    width: 50%;
+    height: 100%; /* Γέμισμα ύψους */
     overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .team-photo img {
-    aspect-ratio: auto; /* Reset aspect ratio */
-    height: auto;
-    object-fit: cover; /* Cover is fine here usually, but prompt asked for alternating */
+    border-radius: 0; /* Αφαιρούμε radius για να κολλήσει */
   }
 
-  /* Κείμενο */
+  .team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop για να ταιριάζει τέλεια */
+    aspect-ratio: auto; 
+    object-position: center top; /* Εστίαση στο πρόσωπο */
+  }
+
   .team-body {
     flex: 1;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Κεντράρισμα κειμένου κάθετα */
+    padding: 3rem;
   }
 
   /* Zig Zag Logic */
-  /* Ζυγά (2, 4): Εικόνα δεξιά, Κείμενο αριστερά */
   .team-card:nth-child(even) {
     flex-direction: row-reverse;
   }
 }
 
-/* ====== Contact Cards with SVGs ====== */
+/* ====== Contact Cards ====== */
 .contact-cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -541,7 +478,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: var(--mint);
 }
 .contact-icon svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
-
 .contact-info { display: flex; flex-direction: column; }
 .contact-k { font-size: 0.7rem; text-transform: uppercase; color: var(--soft); letter-spacing: 0.05em; }
 .contact-v { font-weight: 600; color: var(--ink); }
@@ -586,23 +522,66 @@ input:focus, select:focus, textarea:focus {
 .btn-ghost:hover { background: #fff; border-color: rgba(0,0,0,0.2); }
 .btn-full { width: 100%; }
 
-/* ====== Footer ====== */
+/* ====== Creative Footer ====== */
 .footer {
-  padding: 4rem 0;
-  margin-top: 4rem;
-  background: rgba(255,255,255,0.4); /* Very subtle separation */
+  margin-top: 6rem;
+  padding: 6rem 0 4rem;
+  background: #EAECE9; /* Πιο σκούρο από το bg για contrast */
+  position: relative;
+  /* Creative Curve Top */
+  border-top-left-radius: 50% 3rem;
+  border-top-right-radius: 50% 3rem;
 }
+
+/* Footer decorative line */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
 .footer-row {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+  text-align: center;
 }
+
 @media (min-width: 768px) {
-  .footer-row { flex-direction: row; align-items: center; }
+  .footer-row { 
+    flex-direction: row; 
+    justify-content: space-between;
+    text-align: left;
+    align-items: center; 
+  }
 }
-.footer-links a { margin-right: 1.5rem; color: var(--muted); font-size: 0.9rem; }
-.footer-links a:hover { color: var(--ink); }
+
+.footer-brand h4 { margin: 0; font-size: 1.5rem; font-family: var(--serif); color: var(--ink); }
+.footer-brand p { margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--muted); }
+
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.footer-links a { 
+  font-size: 0.95rem; 
+  font-weight: 500; 
+  color: var(--ink);
+  position: relative;
+}
+.footer-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: width .3s;
+}
+.footer-links a:hover::after { width: 100%; }
 
 /* ====== Utilities ====== */
 .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
