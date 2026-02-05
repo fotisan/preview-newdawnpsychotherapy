@@ -132,7 +132,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   place-items: center;
   cursor: pointer;
-  z-index: 60; /* Must be high */
+  z-index: 60; 
 }
 .nav-toggle-lines {
   width: 1.25rem;
@@ -155,8 +155,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* Darker for better focus */
-  z-index: 55; /* Below Nav, Above Header */
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: 55; 
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -167,7 +167,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   pointer-events: auto;
 }
 
-/* 3. The Drawer */
+/* 3. The Drawer - SOLID BACKGROUND FIX */
 .nav {
   position: fixed;
   top: 0;
@@ -175,16 +175,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   bottom: 0;
   width: 85%;
   max-width: 300px;
-  background: #FFFFFF; /* Solid White for readability */
+  /* ΕΔΩ: Βεβαιωνόμαστε ότι το φόντο είναι αδιαφανές λευκό */
+  background-color: #FFFFFF !important; 
   padding: 6rem 2rem 2rem;
   transform: translateX(100%);
   transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 70; /* Highest level */
+  z-index: 70; 
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   text-align: left;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.2);
 }
 .nav.is-open { transform: translateX(0); }
 
@@ -202,7 +203,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  display: flex; /* Flex ensures centering */
+  display: flex; 
   align-items: center;
   justify-content: center;
   z-index: 80;
@@ -239,7 +240,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .nav {
     position: static;
     transform: none;
-    background: transparent;
+    background: transparent !important; /* Reset to transparent on desktop */
     padding: 0;
     width: auto;
     max-width: none;
@@ -378,9 +379,20 @@ ul { margin: 0; padding: 0; list-style: none; }
   .mini-card { flex: 1; }
 }
 
-/* ====== Services Cards ====== */
-.cards-grid { display: grid; gap: 1.5rem; }
-@media (min-width: 820px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+/* ====== Services Cards (FIX: 2 per row) ====== */
+.cards-grid { 
+  display: grid; 
+  gap: 1.5rem; 
+}
+
+/* Στο desktop αλλάζουμε σε 2 στήλες αντί για 3 */
+@media (min-width: 768px) {
+  .cards-grid { 
+    grid-template-columns: repeat(2, 1fr); /* 2 ανά σειρά */
+    max-width: 1000px; /* Περιορισμός πλάτους για να φαίνεται ωραίο στο κέντρο */
+    margin: 0 auto;
+  }
+}
 
 .card {
   border-radius: 1.5rem;
@@ -402,7 +414,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
 
 
-/* ====== Team (FINAL FIX: ZOOM OUT + SAME SIZE) ====== */
+/* ====== Team (Zoom Out & Same Size) ====== */
 
 .team-grid { 
   display: flex; 
@@ -416,10 +428,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
   box-shadow: var(--shadow2);
   display: flex;
-  flex-direction: column; /* Mobile Default */
+  flex-direction: column; 
 }
 
-/* Mobile: Portrait full width */
+/* Mobile */
 .team-photo {
   width: 100%;
   background: #f4f4f4;
@@ -434,50 +446,41 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .team-body { padding: 2rem; }
 
-/* Desktop: Controlled Frame "Zoom Out" */
+/* Desktop */
 @media (min-width: 980px) {
-  .team-grid { 
-    gap: 5rem; 
-  }
+  .team-grid { gap: 5rem; }
   
   .team-card {
     flex-direction: row; 
-    align-items: center; /* Center vertically */
-    background: transparent; /* Remove card bg for cleaner look on zigzag */
+    align-items: center; 
+    background: transparent; 
     box-shadow: none;
     gap: 4rem;
   }
 
-  /* Το "πλαίσιο" της φωτογραφίας */
   .team-photo {
-    flex: 0 0 350px; /* Σταθερό πλάτος */
+    flex: 0 0 350px; 
     width: 350px;
-    height: 450px; /* Σταθερό ύψος = Όλες ίδιο μέγεθος */
+    height: 450px; 
     border-radius: var(--radius-xl);
     overflow: hidden;
-    background: #EAECE9; /* Απαλό γκρι/πράσινο φόντο */
+    background: #EAECE9; 
     box-shadow: var(--shadow);
-    /* Κεντράρισμα του container */
     margin: 0 auto;
   }
 
-  /* Η εικόνα μέσα στο πλαίσιο */
   .team-photo img {
     width: 100%;
     height: 100%;
-    /* KEY FIX: Contain = Zoom Out. */
-    /* Η εικόνα θα φανεί ολόκληρη μέσα στο πλαίσιο 350x450 */
     object-fit: contain; 
-    object-position: bottom center; /* Συνήθως τα πορτραίτα κόβονται κάτω, οπότε "πατάνε" κάτω */
+    object-position: bottom center; 
   }
   
-  /* Το κείμενο */
   .team-body {
     flex: 1;
     padding: 0;
   }
 
-  /* Zig Zag Logic */
   .team-card:nth-child(even) { 
     flex-direction: row-reverse; 
   }
