@@ -1,279 +1,244 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light" />
-  <meta name="theme-color" content="#0B1220" />
+  <meta name="description" content="Mindfulness-based psychotherapy and psychedelic integration services. Work with an empathetic, nonjudgmental team to support healing, growth, and clarity." />
+  <meta name="theme-color" content="#0b1220" />
 
   <title>New Dawn | Psychotherapy & Psychedelic Integration</title>
-  <meta name="description" content="Mindfulness-based psychotherapy and psychedelic integration support with a grounded, compassionate approach. Individual, couples, and group services." />
 
-  <!-- Favicon (PNG as requested for nav/logo) -->
-  <link rel="icon" href="logo.png" type="image/png" />
+  <!-- Favicon (use your logo PNG as favicon if you want) -->
+  <link rel="icon" href="logo-mark.png" type="image/png" />
 
-  <link rel="preload" as="image" href="hero.webp" imagesrcset="hero.webp 1x" />
+  <link rel="preload" href="hero-portrait.webp" as="image" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Minimal JSON-LD (generic) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MedicalBusiness",
+    "name":"New Dawn",
+    "url":"https://example.com",
+    "email":"info@drleilaortiz.com",
+    "telephone":"+1-312-841-3215",
+    "areaServed":"Chicago, IL",
+    "medicalSpecialty":["Psychotherapy","Mental Health","Psychedelic Integration"]
+  }
+  </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-elevate>
-    <div class="container nav-wrap">
+  <header class="site-header" data-reveal="down">
+    <div class="container header-inner">
       <a class="brand" href="#top" aria-label="New Dawn home">
+        <!-- Logo PNG placeholder -->
         <span class="brand-mark" aria-hidden="true">
-          <!-- Place logo PNG here -->
-          <img src="logo.png" width="34" height="34" alt="" decoding="async" />
+          <img src="logo.png" alt="" width="36" height="36" loading="eager" decoding="async" />
         </span>
-        <span class="brand-text">
-          <span class="brand-name">New Dawn</span>
-          <span class="brand-tag">Psychotherapy · Psychedelic Integration</span>
-        </span>
+        <span class="brand-name">New Dawn</span>
       </a>
 
-      <nav class="nav-desktop" aria-label="Primary">
-        <a href="#psychotherapy" class="nav-link">Psychotherapy</a>
-        <a href="#psychedelics" class="nav-link">Psychedelics</a>
-        <a href="#team" class="nav-link">Meet the Team</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a class="btn btn-sm btn-primary" href="#contact">Contact Us</a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#psychotherapy">Psychotherapy</a></li>
+          <li><a href="#psychedelics">Psychedelics</a></li>
+          <li><a href="#team">Meet the Team</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
+        </ul>
       </nav>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="nav-toggle-lines" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="burger-lines" aria-hidden="true"></span>
       </button>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="drawer" id="mobileMenu" hidden>
-      <div class="drawer-backdrop" data-close></div>
-      <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
-        <div class="drawer-top">
-          <div class="drawer-brand">
-            <img src="logo.png" width="34" height="34" alt="" decoding="async" />
-            <div>
-              <div class="drawer-title">New Dawn</div>
-              <div class="drawer-sub">Care that feels grounded</div>
-            </div>
-          </div>
-          <button class="drawer-close" type="button" aria-label="Close menu" data-close>✕</button>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay" id="mobileMenu" hidden>
+      <div class="menu-sheet" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="menu-top">
+          <span class="menu-title">Menu</span>
+          <button class="menu-close" type="button" aria-label="Close menu">
+            <span aria-hidden="true">×</span>
+          </button>
         </div>
 
-        <div class="drawer-links">
-          <a href="#psychotherapy" class="drawer-link">Psychotherapy</a>
-          <a href="#psychedelics" class="drawer-link">Psychedelics</a>
-          <a href="#team" class="drawer-link">Meet the Team</a>
-          <a href="#contact" class="drawer-link">Contact</a>
+        <div class="menu-links">
+          <a href="#psychotherapy" class="menu-link">Psychotherapy</a>
+          <a href="#psychedelics" class="menu-link">Psychedelics</a>
+          <a href="#team" class="menu-link">Meet the Team</a>
+          <a href="#contact" class="menu-link menu-link-cta">Contact</a>
         </div>
 
-        <div class="drawer-cta">
-          <a class="btn btn-primary" href="#contact">Contact Us</a>
-          <p class="micro muted">Quick response, clear next steps.</p>
+        <div class="menu-foot">
+          <p class="menu-micro">info@drleilaortiz.com</p>
+          <p class="menu-micro">(312) 841-3215</p>
         </div>
       </div>
+      <button class="overlay-scrim" type="button" aria-label="Close menu"></button>
     </div>
   </header>
 
-  <main id="content">
+  <main id="main">
     <!-- HERO -->
-    <section class="hero" id="top">
+    <section id="top" class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="microline reveal">Mindfulness based therapy in Chicago · Online options</p>
+        <div class="hero-copy" data-reveal="up">
+          <p class="micro">
+            Mindfulness based therapy in Chicago, with online options
+          </p>
 
-          <h1 class="hero-h1 reveal">
+          <h1 class="hero-h1">
             The light will always return.
           </h1>
 
-          <p class="hero-sub reveal">
-            Empathetic, nonjudgmental therapy that helps you understand what is happening, change what is possible, and feel more like yourself again.
+          <p class="hero-sub">
+            Empathetic, nonjudgmental psychotherapy and psychedelic integration support.
+            Practical tools for healing, clarity, and steady change.
           </p>
 
-          <div class="hero-actions reveal">
-            <a class="btn btn-primary" href="#contact">Request a consultation</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Contact us</a>
             <a class="btn btn-ghost" href="#psychotherapy">Explore services</a>
           </div>
 
-          <div class="hero-meta reveal">
-            <div class="meta-card">
-              <div class="meta-k">Email</div>
-              <a class="meta-v" href="mailto:info@drleilaortiz.com">info@drleilaortiz.com</a>
+          <div class="hero-badges" data-reveal="up">
+            <div class="badge">
+              <span class="badge-kicker">Email</span>
+              <span class="badge-value">info@drleilaortiz.com</span>
             </div>
-            <div class="meta-card">
-              <div class="meta-k">Phone</div>
-              <a class="meta-v" href="tel:+13128413215">(312) 841-3215</a>
-            </div>
-            <div class="meta-card">
-              <div class="meta-k">Focus</div>
-              <div class="meta-v">Psychotherapy · Psychedelic Integration</div>
+            <div class="badge">
+              <span class="badge-kicker">Phone</span>
+              <span class="badge-value">(312) 841-3215</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-media reveal">
-          <div class="media-frame" aria-label="Therapy space image">
-            <!-- WEBP as requested -->
+        <div class="hero-media" data-reveal="up">
+          <figure class="hero-card">
             <img
-              src="hero.webp"
-              width="1100"
-              height="1320"
-              alt="Warm, calm therapy space"
+              src="hero-portrait.webp"
+              alt="Therapy office portrait"
+              width="960"
+              height="1200"
               loading="eager"
               decoding="async"
-              fetchpriority="high"
             />
-            <div class="media-glow" aria-hidden="true"></div>
-          </div>
-          <div class="media-note">
-            <p class="muted">
-              A calm space to slow down, get clarity, and build a new relationship with your inner world.
-            </p>
-          </div>
+            <figcaption class="hero-caption">
+              <span class="cap-title">Meet Dr. Leila Ortiz</span>
+              <span class="cap-sub">PhD • Mindfulness based therapy</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
+      <div class="hero-glow" aria-hidden="true"></div>
     </section>
 
     <!-- APPROACH -->
-    <section class="section" aria-label="Approach">
+    <section class="section" aria-labelledby="approachTitle">
       <div class="container">
-        <div class="section-head">
-          <h2 class="h2 reveal">Meet Dr. Leila Ortiz</h2>
-          <p class="lead reveal">
-            Empathetic, mindfulness based therapy with a direct, caring style. A space where you can be honest, feel understood, and move forward.
+        <div class="section-head" data-reveal="up">
+          <h2 id="approachTitle">Dr. Leila’s approach</h2>
+          <p class="lead">
+            A calm space, clear guidance, and meaningful progress you can feel in daily life.
           </p>
         </div>
 
         <div class="grid-2">
-          <article class="card reveal">
-            <h3 class="h3">Dr. Leila’s approach</h3>
+          <div class="card" data-reveal="up">
+            <h3>Empathetic and direct</h3>
             <p>
-              I support people in living their full potential and enjoying a life that brings happiness and fulfillment. Our work together focuses on understanding what interferes with that process and building tools to transform it.
+              If you want someone who listens with care, respects your story, and gently challenges unhelpful patterns,
+              you may feel at home here. We focus on understanding what is happening now, and why it keeps happening.
             </p>
+          </div>
+
+          <div class="card" data-reveal="up">
+            <h3>Tools you can actually use</h3>
             <p>
-              We work with old beliefs and patterns, and build mindful awareness, self compassion, and insight. The goal is grounded change that feels real in everyday life.
+              Our work is grounded in mindfulness, self compassion, and evidence based methods.
+              We help you build insight, emotional steadiness, and new choices that match the life you want.
             </p>
-            <div class="pill-row" aria-label="Therapy modalities">
-              <span class="pill">Mindfulness</span>
-              <span class="pill">CBT informed</span>
-              <span class="pill">Positive psychology</span>
-              <span class="pill">Trauma informed</span>
-            </div>
-          </article>
+          </div>
+        </div>
 
-          <article class="card card-soft reveal">
-            <h3 class="h3">Good fit if you want</h3>
-            <ul class="clean-list">
-              <li>Empathy without sugarcoating</li>
-              <li>Clear direction and practical tools</li>
-              <li>Space to feel, reflect, and integrate</li>
-              <li>A therapist who challenges your thinking with care</li>
-            </ul>
-
-            <div class="callout">
-              <div class="callout-title">First step</div>
-              <p class="muted">
-                Send a short message about what you are navigating. We will reply with next steps and availability.
-              </p>
-              <a class="btn btn-primary btn-sm" href="#contact">Contact us</a>
-            </div>
-          </article>
+        <div class="quote" data-reveal="up" role="note">
+          <p>
+            “The goal is not to become someone else. It is to come back to yourself with more clarity, integrity, and ease.”
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="psychotherapy" aria-label="Psychotherapy services">
+    <!-- PSYCHOTHERAPY -->
+    <section id="psychotherapy" class="section section-contrast" aria-labelledby="psyTitle">
       <div class="container">
-        <div class="section-head">
-          <h2 class="h2 reveal">Psychotherapy Services</h2>
-          <p class="lead reveal">
-            Personalized, evidence informed therapy that helps you identify strengths, build awareness, and create meaningful change.
+        <div class="section-head" data-reveal="up">
+          <p class="micro">Psychotherapy services</p>
+          <h2 id="psyTitle">Personalized therapy for real life</h2>
+          <p class="lead">
+            We use tailored techniques to support strengths, awareness, and effective change.
+            Your story stays central, and the pace stays human.
           </p>
         </div>
 
         <div class="service-grid">
-          <button class="service-card reveal" type="button" data-modal="service-trauma">
-            <div class="service-top">
-              <h3 class="h3">Trauma, PTSD, Grief & Loss</h3>
-              <span class="tag">Trauma informed</span>
-            </div>
-            <p class="muted">Compassionate support to restore safety, peace, and purpose.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Trauma, PTSD, grief and loss</h3>
+            <p>Compassionate, trauma informed care to rebuild safety, peace, and purpose.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-postpartum">
-            <div class="service-top">
-              <h3 class="h3">Pregnancy, Prenatal & Postpartum</h3>
-              <span class="tag">Life transition</span>
-            </div>
-            <p class="muted">Support through a powerful season of change for mind and body.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Pregnancy, prenatal and postpartum</h3>
+            <p>Support through emotional complexity and identity shifts during a major transition.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-couples">
-            <div class="service-top">
-              <h3 class="h3">Couples & Family Therapy</h3>
-              <span class="tag">Relationships</span>
-            </div>
-            <p class="muted">Better communication, conflict repair, healthier connection.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Couples and family therapy</h3>
+            <p>Improve communication, reduce conflict, and strengthen secure connection.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-anxiety">
-            <div class="service-top">
-              <h3 class="h3">Depression & Anxiety</h3>
-              <span class="tag">Relief</span>
-            </div>
-            <p class="muted">Tools for regulation, coping strategies, and steadier days.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Depression and anxiety</h3>
+            <p>Practical coping strategies, insight, and a pathway back to steadier days.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-identity">
-            <div class="service-top">
-              <h3 class="h3">Self Image, Identity & Life Transition</h3>
-              <span class="tag">Resilience</span>
-            </div>
-            <p class="muted">Confidence, self acceptance, clarity during change.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Self image, identity and life transitions</h3>
+            <p>Explore change with support and build confidence, resilience, and self acceptance.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-cultural">
-            <div class="service-top">
-              <h3 class="h3">Cultural & Immigration</h3>
-              <span class="tag">Culturally sensitive</span>
-            </div>
-            <p class="muted">Support for identity, acculturation, and belonging.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Cultural and immigration</h3>
+            <p>Culturally sensitive therapy that honors background, belonging, and adaptation.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-chronic">
-            <div class="service-top">
-              <h3 class="h3">Chronic Illness</h3>
-              <span class="tag">Support</span>
-            </div>
-            <p class="muted">Coping, meaning, and resilience for long term conditions.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Chronic illness</h3>
+            <p>Support for the emotional weight of chronic conditions, with coping and meaning.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-lgbtq">
-            <div class="service-top">
-              <h3 class="h3">LGBTQIA2S+</h3>
-              <span class="tag">Affirming care</span>
-            </div>
-            <p class="muted">A space that honors identity, relationships, and lived experience.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>LGBTQIA2S+</h3>
+            <p>Affirming care with respect, cultural competence, and room for your full self.</p>
+          </article>
 
-          <button class="service-card reveal" type="button" data-modal="service-women">
-            <div class="service-top">
-              <h3 class="h3">Women’s Issues</h3>
-              <span class="tag">Empowerment</span>
-            </div>
-            <p class="muted">Support for roles, boundaries, balance, and self trust.</p>
-          </button>
+          <article class="service" data-reveal="up">
+            <h3>Women’s issues</h3>
+            <p>Space to navigate roles, boundaries, self worth, and work life balance with clarity.</p>
+          </article>
         </div>
 
-        <div class="section-cta reveal">
-          <div class="cta-panel">
+        <div class="cta-row" data-reveal="up">
+          <div class="cta-card">
             <div>
-              <h3 class="h3">Not sure where to start</h3>
-              <p class="muted">You do not have to figure it out alone. A short consult can help you choose the right path.</p>
+              <h3>Not sure where to start?</h3>
+              <p>
+                A short message is enough. We will suggest the next step and help you choose the right service.
+              </p>
             </div>
             <a class="btn btn-primary" href="#contact">Contact us</a>
           </div>
@@ -281,469 +246,394 @@
       </div>
     </section>
 
-    <!-- PSYCHEDELIC SERVICES -->
-    <section class="section" id="psychedelics" aria-label="Psychedelic services">
+    <!-- PSYCHEDELICS -->
+    <section id="psychedelics" class="section" aria-labelledby="psychedelicsTitle">
       <div class="container">
-        <div class="section-head">
-          <h2 class="h2 reveal">Psychedelic Services</h2>
-          <p class="lead reveal">
-            Psychedelic assisted psychotherapy is an emerging approach that combines carefully held experiences with therapeutic integration.
+        <div class="section-head" data-reveal="up">
+          <p class="micro">Psychedelic assisted therapy</p>
+          <h2 id="psychedelicsTitle">Integration focused support</h2>
+          <p class="lead">
+            Psychedelic assisted psychotherapy is an emerging approach combining psychotherapy with carefully supported experiences.
+            Integration is where insights become lasting change.
           </p>
         </div>
 
         <div class="grid-2">
-          <article class="card reveal">
-            <h3 class="h3">What are the effects of psychedelics</h3>
+          <div class="card" data-reveal="up">
+            <h3>What integration can look like</h3>
             <p>
-              Psychedelic experiences can shift perspective and create insight, emotional release, and new meaning. Integration helps you translate what came up into real life.
+              Reflection in the days and weeks after an experience helps you carry meaning into everyday life.
+              We tailor the process to you, using practices like mindfulness, journaling, movement, and values based planning.
             </p>
-            <p class="muted">
-              Integration can include therapeutic reflection and grounded practices like meditation, walking, journaling, and music. Each person’s process is different.
+            <div class="pill-row" aria-label="Integration tools">
+              <span class="pill">Mindful awareness</span>
+              <span class="pill">Self compassion</span>
+              <span class="pill">Grounding practices</span>
+              <span class="pill">Values clarity</span>
+            </div>
+          </div>
+
+          <div class="card" data-reveal="up">
+            <h3>Why people seek this work</h3>
+            <p>
+              Many people describe perspective shifts, emotional release, and a renewed sense of connection.
+              A trained therapist helps you process what surfaced and translate it into actionable steps.
             </p>
-          </article>
-
-          <article class="card card-glass reveal">
-            <h3 class="h3">Offerings</h3>
-            <ul class="clean-list">
-              <li>Individual psychedelic therapy</li>
-              <li>Psychedelic group ceremonies</li>
-              <li>Psychedelic medicine consultations</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <h3 class="h3">For providers</h3>
-            <ul class="clean-list">
-              <li>Coaching consultation</li>
-              <li>Clinical supervision</li>
-              <li>Psychedelic training</li>
-            </ul>
-          </article>
+          </div>
         </div>
 
-        <div class="grid-2 mt-16">
-          <article class="card reveal">
-            <h3 class="h3">Ketamine</h3>
-            <p>
-              Ketamine is a dissociative anesthetic used in medical settings for decades. In a supervised context, it can provide rapid symptom relief for some people.
-            </p>
-            <p class="muted">
-              When paired with psychotherapy, ketamine can support emotional processing and durable shifts in daily functioning.
-            </p>
-          </article>
+        <div class="subsection" data-reveal="up">
+          <h3 class="subhead">Psychedelic services</h3>
 
-          <article class="card reveal">
-            <h3 class="h3">Psilocybin</h3>
-            <p>
-              Psilocybin is the active compound in “magic mushrooms.” Research suggests therapeutic potential for depression, trauma, and addiction through changes in brain connectivity and meaning making.
-            </p>
-            <p class="muted">
-              The work is not only the experience. The work is what you build after it.
-            </p>
-          </article>
+          <div class="service-grid compact">
+            <article class="service" data-reveal="up">
+              <h4>Individual psychedelic therapy</h4>
+              <p>One on one support with a personalized, integrated plan.</p>
+            </article>
+
+            <article class="service" data-reveal="up">
+              <h4>Psychedelic group ceremonies</h4>
+              <p>Group settings with intentional preparation and thoughtful integration.</p>
+            </article>
+
+            <article class="service" data-reveal="up">
+              <h4>Psychedelic medicine consultations</h4>
+              <p>Clear guidance, safety minded discussion, and next step planning.</p>
+            </article>
+
+            <article class="service" data-reveal="up">
+              <h4>For providers</h4>
+              <p>Coaching consultation, clinical supervision, and training support.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="media-card" data-reveal="up">
+            <div class="media-img">
+              <img src="ketamine.webp" alt="Calm abstract image representing ketamine therapy" width="1200" height="800" loading="lazy" decoding="async" />
+            </div>
+            <div class="media-body">
+              <h3>Ketamine</h3>
+              <p>
+                Ketamine is a dissociative anesthetic used in hospitals for decades.
+                In medically supervised settings it can support relief for certain conditions, sometimes within hours.
+                When paired with psychotherapy, it can help process difficult emotions and create durable change.
+              </p>
+            </div>
+          </div>
+
+          <div class="media-card" data-reveal="up">
+            <div class="media-img">
+              <img src="psilocybin.webp" alt="Calm abstract image representing psilocybin therapy" width="1200" height="800" loading="lazy" decoding="async" />
+            </div>
+            <div class="media-body">
+              <h3>Psilocybin</h3>
+              <p>
+                Psilocybin is the active compound in so called magic mushrooms.
+                Research suggests potential benefits across depression, PTSD, addiction, and more.
+                Integration is essential, because insight becomes valuable when it changes how you live.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-row" data-reveal="up">
+          <div class="cta-card soft">
+            <div>
+              <h3>Want to talk it through first?</h3>
+              <p>
+                If you have questions about fit, process, or starting steps, reach out. We will respond clearly and respectfully.
+              </p>
+            </div>
+            <a class="btn btn-primary" href="#contact">Contact us</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- TEAM -->
-    <section class="section" id="team" aria-label="Meet the team">
+    <section id="team" class="section section-contrast" aria-labelledby="teamTitle">
       <div class="container">
-        <div class="section-head">
-          <h2 class="h2 reveal">Meet the Team</h2>
-          <p class="lead reveal">
-            A warm, grounded group of clinicians with a practical approach and deep respect for your story.
+        <div class="section-head" data-reveal="up">
+          <p class="micro">Meet the team</p>
+          <h2 id="teamTitle">A team built for depth and care</h2>
+          <p class="lead">
+            Warm, grounded clinicians with clear communication. Therapy that feels safe, and still moves forward.
           </p>
         </div>
 
         <div class="team-grid">
-          <!-- Note: photos should NOT look like profile circles -->
-          <article class="team-card reveal">
+          <article class="team-card" data-reveal="up">
             <div class="team-photo">
-              <img src="team-leila.webp" width="1200" height="900" alt="Dr. Leila Ortiz" loading="lazy" decoding="async" />
+              <img src="team-leila.webp" alt="Dr. Leila Ortiz" width="1200" height="1400" loading="lazy" decoding="async" />
             </div>
             <div class="team-body">
-              <h3 class="h3">Dr. Leila Ortiz <span class="muted">| PhD</span></h3>
-              <p class="muted">
-                I support people in living their full potential and enjoying a life that brings happiness and fulfillment. Together, we work toward empowerment, personal growth, and healing.
+              <h3>Dr. Leila Ortiz <span class="team-cred">PhD</span></h3>
+              <p>
+                I support people in living with more fulfillment and ease. Together we work to understand and transform old beliefs,
+                build mindful awareness, and grow into a steadier sense of self love and integrity.
               </p>
-              <button class="btn btn-ghost btn-sm" type="button" data-modal="bio-leila">Read more</button>
             </div>
           </article>
 
-          <article class="team-card reveal">
+          <article class="team-card" data-reveal="up">
             <div class="team-photo">
-              <img src="team-tiffany.webp" width="1200" height="900" alt="Tiffany Ream" loading="lazy" decoding="async" />
+              <img src="team-tiffany.webp" alt="Tiffany Ream" width="1200" height="1400" loading="lazy" decoding="async" />
             </div>
             <div class="team-body">
-              <h3 class="h3">Tiffany Ream <span class="muted">| LCPC</span></h3>
-              <p class="muted">
-                A good relationship between therapist and client is the key to successful therapy. Safe space, steady pace, practical tools.
+              <h3>Tiffany Ream <span class="team-cred">LCPC</span></h3>
+              <p>
+                A strong relationship is the foundation. I offer a judgment free space and practical tools, often drawing from CBT
+                and solution focused work, with flexibility to match your needs and pace.
               </p>
-              <button class="btn btn-ghost btn-sm" type="button" data-modal="bio-tiffany">Read more</button>
             </div>
           </article>
 
-          <article class="team-card reveal">
+          <article class="team-card" data-reveal="up">
             <div class="team-photo">
-              <img src="team-celine.webp" width="1200" height="900" alt="Celine Espinoza" loading="lazy" decoding="async" />
+              <img src="team-celine.webp" alt="Celine Espinoza" width="1200" height="1400" loading="lazy" decoding="async" />
             </div>
             <div class="team-body">
-              <h3 class="h3">Celine Espinoza <span class="muted">| LCSW</span></h3>
-              <p class="muted">
-                Therapy with me is collaborative. Practical support when needed, deeper exploration when it matters.
+              <h3>Celine Espinoza <span class="team-cred">LCSW</span></h3>
+              <p>
+                Practical, collaborative therapy with space for depth. We make sense of what you are carrying, build regulation skills,
+                and explore patterns that shape relationships and self understanding.
               </p>
-              <button class="btn btn-ghost btn-sm" type="button" data-modal="bio-celine">Read more</button>
             </div>
           </article>
 
-          <article class="team-card reveal">
+          <article class="team-card" data-reveal="up">
             <div class="team-photo">
-              <img src="team-ellie.webp" width="1200" height="900" alt="Ellie Parker" loading="lazy" decoding="async" />
+              <img src="team-ellie.webp" alt="Ellie Parker" width="1200" height="1400" loading="lazy" decoding="async" />
             </div>
             <div class="team-body">
-              <h3 class="h3">Ellie Parker <span class="muted">| Intern</span></h3>
-              <p class="muted">
-                A warm, safe space with a holistic lens. We move at your pace, with care, honesty, and the occasional humor.
+              <h3>Ellie Parker <span class="team-cred">CMHC Intern</span></h3>
+              <p>
+                It takes courage to reach out. I work with a holistic, humanistic lens and a warm style that supports awareness,
+                self compassion, and growth, with the occasional lightness when it helps.
               </p>
-              <button class="btn btn-ghost btn-sm" type="button" data-modal="bio-ellie">Read more</button>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" aria-label="FAQ">
-      <div class="container">
-        <div class="section-head">
-          <h2 class="h2 reveal">FAQ</h2>
-          <p class="lead reveal">Short answers that make the first step feel easier.</p>
-        </div>
-
-        <div class="faq">
-          <details class="faq-item reveal">
-            <summary>What is the first step</summary>
-            <div class="faq-body">
-              <p>Send a short message about what you are navigating. We will reply with next steps, availability, and a clear recommendation.</p>
-            </div>
-          </details>
-
-          <details class="faq-item reveal">
-            <summary>How long are sessions</summary>
-            <div class="faq-body">
-              <p>Most sessions are 50 to 60 minutes. Couples and groups may vary depending on the format.</p>
-            </div>
-          </details>
-
-          <details class="faq-item reveal">
-            <summary>Do you offer online therapy</summary>
-            <div class="faq-body">
-              <p>Yes, online options may be available depending on the service and your location. Share your preference in the contact form.</p>
-            </div>
-          </details>
-
-          <details class="faq-item reveal">
-            <summary>How do psychedelic services work here</summary>
-            <div class="faq-body">
-              <p>The focus is on preparation and integration. We help you create meaning from your experience and translate insights into daily life.</p>
-            </div>
-          </details>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section section-dark" id="contact" aria-label="Contact">
+    <section id="contact" class="section" aria-labelledby="contactTitle">
       <div class="container">
+        <div class="section-head" data-reveal="up">
+          <p class="micro">Contact us</p>
+          <h2 id="contactTitle">Start with a simple message</h2>
+          <p class="lead">
+            Tell us what you are looking for, and we will suggest a clear next step. No pressure, just direction.
+          </p>
+        </div>
+
         <div class="contact-grid">
-          <div class="reveal">
-            <h2 class="h2">Contact Us</h2>
-            <p class="lead">
-              Tell us what you are looking for. We will respond with a simple next step.
-            </p>
+          <div class="contact-card" data-reveal="up">
+            <h3>Get in touch</h3>
 
-            <div class="contact-cards">
-              <a class="contact-card" href="mailto:info@drleilaortiz.com">
-                <div class="cc-k">Email</div>
-                <div class="cc-v">info@drleilaortiz.com</div>
-              </a>
+            <form class="form" action="#" method="post" autocomplete="on">
+              <label class="field">
+                <span class="label">Name</span>
+                <input class="input" name="name" type="text" placeholder="Your name" required />
+              </label>
 
-              <a class="contact-card" href="tel:+13128413215">
-                <div class="cc-k">Phone</div>
-                <div class="cc-v">(312) 841-3215</div>
-              </a>
-            </div>
+              <label class="field">
+                <span class="label">Email</span>
+                <input class="input" name="email" type="email" placeholder="you@example.com" required />
+              </label>
 
-            <p class="micro muted">
-              If you are in immediate danger or need urgent help, contact local emergency services.
-            </p>
+              <label class="field">
+                <span class="label">What would you like support with</span>
+                <textarea class="input textarea" name="message" rows="5" placeholder="A few lines is enough" required></textarea>
+              </label>
+
+              <button class="btn btn-primary btn-full" type="submit">Send message</button>
+
+              <p class="form-note">
+                This form is a demo. Connect it to your preferred form provider or backend.
+              </p>
+            </form>
           </div>
 
-          <form class="form card reveal" autocomplete="on">
-            <div class="form-row">
-              <label>
-                <span>Name</span>
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
+          <aside class="contact-side" data-reveal="up">
+            <div class="info-card">
+              <h3>Contact details</h3>
+              <p class="info-line"><span class="info-key">Email</span> <a href="mailto:info@drleilaortiz.com">info@drleilaortiz.com</a></p>
+              <p class="info-line"><span class="info-key">Phone</span> <a href="tel:+13128413215">(312) 841-3215</a></p>
+              <p class="info-line"><span class="info-key">Hours</span> By appointment</p>
+
+              <div class="divider"></div>
+
+              <p class="small">
+                If you are in immediate danger or crisis, call local emergency services or a crisis hotline in your area.
+              </p>
             </div>
 
-            <div class="form-row">
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="you@email.com" required />
-              </label>
+            <div class="image-card" data-reveal="up" aria-hidden="true">
+              <img src="contact-room.webp" alt="" width="1200" height="900" loading="lazy" decoding="async" />
             </div>
-
-            <div class="form-row">
-              <label>
-                <span>What are you looking for</span>
-                <select name="service" required>
-                  <option value="" selected disabled>Select one</option>
-                  <option>Psychotherapy</option>
-                  <option>Couples and family therapy</option>
-                  <option>Psychedelic integration</option>
-                  <option>Provider supervision</option>
-                  <option>Not sure yet</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="form-row">
-              <label>
-                <span>Message</span>
-                <textarea name="message" rows="5" placeholder="A few sentences is enough" required></textarea>
-              </label>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Send message</button>
-            <p class="micro muted">This form is a frontend demo. Connect it to your email or form provider.</p>
-          </form>
+          </aside>
         </div>
       </div>
     </section>
 
-    <footer class="site-footer">
-      <div class="container footer-wrap">
+    <footer class="footer">
+      <div class="container footer-inner">
         <div class="footer-left">
           <div class="footer-brand">
-            <img src="logo.png" width="30" height="30" alt="" decoding="async" />
-            <div>
-              <div class="footer-name">New Dawn</div>
-              <div class="micro muted">Psychotherapy · Psychedelic Integration</div>
-            </div>
+            <img src="logo.png" alt="" width="28" height="28" loading="lazy" decoding="async" />
+            <span>New Dawn</span>
           </div>
-          <p class="micro muted">© <span id="year"></span> New Dawn. All rights reserved.</p>
+          <p class="footer-copy">Psychotherapy and psychedelic integration services.</p>
+          <p class="footer-copy small">© <span id="year"></span> New Dawn. All rights reserved.</p>
         </div>
 
         <div class="footer-right">
-          <a class="micro" href="#psychotherapy">Psychotherapy</a>
-          <a class="micro" href="#psychedelics">Psychedelics</a>
-          <a class="micro" href="#team">Team</a>
-          <a class="micro" href="#contact">Contact</a>
+          <a href="#psychotherapy">Psychotherapy</a>
+          <a href="#psychedelics">Psychedelics</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </footer>
   </main>
 
-  <!-- MODAL (shared) -->
-  <div class="modal" id="modal" aria-hidden="true" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Details">
-      <button class="modal-close" type="button" aria-label="Close" data-close>✕</button>
-      <div class="modal-content" id="modalContent"></div>
-    </div>
-  </div>
-
   <script>
     (function () {
-      const qs = (s, el = document) => el.querySelector(s);
-      const qsa = (s, el = document) => Array.from(el.querySelectorAll(s));
+      const root = document.documentElement;
 
       // Year
-      const y = qs("#year");
+      const y = document.getElementById('year');
       if (y) y.textContent = String(new Date().getFullYear());
 
-      // Header elevate on scroll
-      const header = qs("[data-elevate]");
-      const onScroll = () => {
-        if (!header) return;
-        header.classList.toggle("is-elevated", window.scrollY > 8);
-      };
-      onScroll();
-      window.addEventListener("scroll", onScroll, { passive: true });
+      // Reveal on scroll
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
 
-      // Mobile drawer
-      const toggle = qs(".nav-toggle");
-      const drawer = qs(".drawer");
-      const drawerPanel = qs(".drawer-panel");
-      const closeEls = qsa("[data-close]", drawer);
-
-      const openDrawer = () => {
-        if (!drawer || !toggle) return;
-        drawer.hidden = false;
-        requestAnimationFrame(() => drawer.classList.add("is-open"));
-        toggle.setAttribute("aria-expanded", "true");
-        document.documentElement.classList.add("no-scroll");
-        // Focus first link for accessibility
-        const first = qs(".drawer-link", drawerPanel);
-        if (first) first.focus({ preventScroll: true });
-      };
-
-      const closeDrawer = () => {
-        if (!drawer || !toggle) return;
-        drawer.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.documentElement.classList.remove("no-scroll");
-        // Wait for animation
-        window.setTimeout(() => { drawer.hidden = true; }, 220);
-        toggle.focus({ preventScroll: true });
-      };
-
-      if (toggle && drawer) {
-        toggle.addEventListener("click", () => {
-          const expanded = toggle.getAttribute("aria-expanded") === "true";
-          expanded ? closeDrawer() : openDrawer();
-        });
-
-        closeEls.forEach((el) => el.addEventListener("click", closeDrawer));
-        qsa(".drawer-link", drawer).forEach((a) => a.addEventListener("click", closeDrawer));
-
-        window.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && !drawer.hidden) closeDrawer();
-        }, { passive: true });
-      }
-
-      // Reveal on scroll (subtle)
-      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!prefersReduced) {
-        const revealEls = qsa(".reveal");
+      if (prefersReduced) {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+      } else if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("is-in");
+              entry.target.classList.add('is-visible');
               io.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
 
-        revealEls.forEach((el) => io.observe(el));
+        revealEls.forEach(el => io.observe(el));
       } else {
-        qsa(".reveal").forEach((el) => el.classList.add("is-in"));
+        revealEls.forEach(el => el.classList.add('is-visible'));
       }
 
-      // Modal content map
-      const modal = qs("#modal");
-      const modalContent = qs("#modalContent");
-      const openButtons = qsa("[data-modal]");
-      const modalClosers = qsa("[data-close]", modal);
+      // Mobile menu
+      const burger = document.querySelector('.burger');
+      const overlay = document.querySelector('.menu-overlay');
+      const sheet = overlay ? overlay.querySelector('.menu-sheet') : null;
+      const closeBtn = overlay ? overlay.querySelector('.menu-close') : null;
+      const scrim = overlay ? overlay.querySelector('.overlay-scrim') : null;
+      const menuLinks = overlay ? Array.from(overlay.querySelectorAll('.menu-link')) : [];
 
-      const content = {
-        "service-trauma": `
-          <h3 class="h3">Trauma, PTSD, Grief & Loss</h3>
-          <p>Trauma informed therapy that supports safety, stabilization, and meaning making. We work gently and directly, at a pace that respects your nervous system.</p>
-        `,
-        "service-postpartum": `
-          <h3 class="h3">Pregnancy, Prenatal & Postpartum</h3>
-          <p>Support for the emotional and psychological complexity of pregnancy and postpartum seasons. We focus on steadier routines, identity shifts, and compassionate care.</p>
-        `,
-        "service-couples": `
-          <h3 class="h3">Couples & Family Therapy</h3>
-          <p>Improve communication and repair. We name patterns, build new ways of relating, and create a safer emotional environment at home.</p>
-        `,
-        "service-anxiety": `
-          <h3 class="h3">Depression & Anxiety</h3>
-          <p>Clear coping strategies, cognitive tools, and practical steps that support regulation and better daily function.</p>
-        `,
-        "service-identity": `
-          <h3 class="h3">Self Image, Identity & Life Transition</h3>
-          <p>Support for change, self trust, and self acceptance. We work on what feels stuck, and build confidence from the inside out.</p>
-        `,
-        "service-cultural": `
-          <h3 class="h3">Cultural & Immigration</h3>
-          <p>Culturally sensitive therapy that honors identity and lived experience. We support belonging, grief, and the complexity of adaptation.</p>
-        `,
-        "service-chronic": `
-          <h3 class="h3">Chronic Illness</h3>
-          <p>Support for grief, fatigue, meaning, and resilience. We focus on sustainable coping and a life that still feels yours.</p>
-        `,
-        "service-lgbtq": `
-          <h3 class="h3">LGBTQIA2S+</h3>
-          <p>Affirming care for identity, relationships, and stressors that can be invisible to others. You do not have to explain yourself here.</p>
-        `,
-        "service-women": `
-          <h3 class="h3">Women’s Issues</h3>
-          <p>Support for boundaries, roles, work life balance, reproductive health concerns, and living with more authenticity.</p>
-        `,
-        "bio-leila": `
-          <h3 class="h3">Dr. Leila Ortiz | PhD</h3>
-          <p>I strive to support people in living their full potential and enjoying a life that brings happiness and fulfillment. I aim to equip people with the tools to understand and transform whatever interferes with that process.</p>
-          <p>Our work together can support transforming negative beliefs and patterns, building presence, integrity, self love, and joy. If you want empathy with honest reflection and thoughtful challenge, we may be a good fit.</p>
-        `,
-        "bio-tiffany": `
-          <h3 class="h3">Tiffany Ream | Licensed Clinical Professional Counselor</h3>
-          <p>A good relationship between therapist and client is the key to successful therapy. I have about 16 years of experience with trauma, depression, anxiety, bipolar, adjustment disorders, and relationship conflicts.</p>
-          <p>I provide a judgment free space and typically use CBT and solution focused therapy, adapting to what works best for you.</p>
-        `,
-        "bio-celine": `
-          <h3 class="h3">Celine Espinoza | Licensed Clinical Social Worker</h3>
-          <p>I have experience in medical and behavioral health settings, including inpatient psychiatric care. My approach is grounded and practical.</p>
-          <p>Therapy with me is collaborative. We may focus on coping strategies, emotional regulation, and thought patterns, while also exploring relational themes when relevant.</p>
-        `,
-        "bio-ellie": `
-          <h3 class="h3">Ellie Parker | Clinical Mental Health Counseling Intern</h3>
-          <p>It takes courage to reach out. I invite you to honor your commitment to yourself and healing.</p>
-          <p>My approach is humanistic and holistic, tailored to you. We build a warm, safe space that supports awareness, understanding, and vulnerability, moving at a pace that feels right.</p>
-        `,
-      };
+      let lastFocus = null;
 
-      const openModal = (key) => {
-        if (!modal || !modalContent) return;
-        modalContent.innerHTML = content[key] || "<p class='muted'>Details coming soon.</p>";
-        modal.hidden = false;
-        requestAnimationFrame(() => modal.classList.add("is-open"));
-        modal.setAttribute("aria-hidden", "false");
-        document.documentElement.classList.add("no-scroll");
-        const closeBtn = qs(".modal-close", modal);
-        if (closeBtn) closeBtn.focus({ preventScroll: true });
-      };
+      function openMenu() {
+        if (!overlay || !burger) return;
+        lastFocus = document.activeElement;
 
-      const closeModal = () => {
-        if (!modal) return;
-        modal.classList.remove("is-open");
-        modal.setAttribute("aria-hidden", "true");
-        document.documentElement.classList.remove("no-scroll");
-        window.setTimeout(() => { modal.hidden = true; }, 220);
-      };
+        overlay.hidden = false;
+        requestAnimationFrame(() => overlay.classList.add('open'));
 
-      openButtons.forEach((btn) => {
-        btn.addEventListener("click", () => openModal(btn.getAttribute("data-modal")));
-      });
+        burger.setAttribute('aria-expanded', 'true');
+        burger.setAttribute('aria-label', 'Close menu');
 
-      if (modal) {
-        modalClosers.forEach((el) => el.addEventListener("click", closeModal));
-        window.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && !modal.hidden) closeModal();
-        }, { passive: true });
+        root.classList.add('no-scroll');
+
+        // Focus first link
+        const first = overlay.querySelector('.menu-link');
+        if (first) first.focus({ preventScroll: true });
       }
 
-      // Demo form submit (prevents refresh)
-      const form = qs("form");
-      if (form) {
-        form.addEventListener("submit", (e) => {
+      function closeMenu() {
+        if (!overlay || !burger) return;
+        overlay.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Open menu');
+        root.classList.remove('no-scroll');
+
+        // Wait for transition
+        window.setTimeout(() => {
+          overlay.hidden = true;
+          if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({ preventScroll: true });
+        }, 220);
+      }
+
+      function onKeyDown(e) {
+        if (!overlay || overlay.hidden) return;
+
+        if (e.key === 'Escape') {
           e.preventDefault();
-          const btn = qs("button[type='submit']", form);
-          if (btn) {
-            const original = btn.textContent;
-            btn.textContent = "Message sent";
-            btn.disabled = true;
-            window.setTimeout(() => {
-              btn.textContent = original;
-              btn.disabled = false;
-              form.reset();
-            }, 1600);
+          closeMenu();
+          return;
+        }
+
+        // Basic focus trap
+        if (e.key === 'Tab' && sheet) {
+          const focusables = sheet.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+          const list = Array.from(focusables).filter(el => !el.hasAttribute('disabled'));
+          if (!list.length) return;
+
+          const first = list[0];
+          const last = list[list.length - 1];
+
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
           }
+        }
+      }
+
+      if (burger) {
+        burger.addEventListener('click', () => {
+          const isOpen = burger.getAttribute('aria-expanded') === 'true';
+          isOpen ? closeMenu() : openMenu();
         });
       }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (scrim) scrim.addEventListener('click', closeMenu);
+
+      menuLinks.forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', onKeyDown);
+
+      // Close on resize to desktop
+      let rAF = null;
+      window.addEventListener('resize', () => {
+        if (rAF) cancelAnimationFrame(rAF);
+        rAF = requestAnimationFrame(() => {
+          if (window.innerWidth >= 900 && overlay && !overlay.hidden) closeMenu();
+        });
+      });
+
+      // Smooth anchor without jump
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href');
+          if (!id || id.length < 2) return;
+          const target = document.querySelector(id);
+          if (!target) return;
+
+          e.preventDefault();
+          target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+          history.pushState(null, '', id);
+        });
+      });
     })();
   </script>
 </body>
