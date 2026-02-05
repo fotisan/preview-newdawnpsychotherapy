@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0B1220" />
+  <meta name="theme-color" content="#F9F8F4" />
+  
   <title>Dr. Leila Ortiz, PhD | Mindfulness-Based Therapy & Psychedelic Integration</title>
   <meta name="description" content="Empathetic, mindfulness-based therapy and psychedelic integration services. Individual and group support in Chicago, IL and online." />
 
@@ -107,6 +108,8 @@
           <div class="media-frame">
             <img
               src="hero.webp"
+              srcset="hero-mobile.webp 500w, hero.webp 920w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               width="920"
               height="1080"
               alt="A calm, welcoming therapy space"
@@ -155,6 +158,8 @@
           <div class="media-frame media-frame--soft">
             <img
               src="approach.webp"
+              srcset="approach-mobile.webp 500w, approach.webp 960w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               width="960"
               height="820"
               alt="A quiet moment of reflection"
@@ -356,6 +361,8 @@
           <div class="media-frame">
             <img
               src="psychedelic.webp"
+              srcset="psychedelic-mobile.webp 500w, psychedelic.webp 960w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               width="960"
               height="920"
               alt="Soft light through leaves, calm natural texture"
@@ -559,7 +566,7 @@
   </main>
 
   <script>
-    // Mobile-first, minimal JS, performance-safe animations.
+    // JS παραμένει σχεδόν ίδιο, αλλά διασφαλίζουμε ότι λειτουργεί τέλεια με το νέο theme
     (() => {
       const root = document.documentElement;
       root.classList.add('js');
@@ -568,7 +575,7 @@
       const header = document.querySelector('[data-elevate]');
       const onScroll = () => {
         if (!header) return;
-        header.classList.toggle('is-scrolled', window.scrollY > 6);
+        header.classList.toggle('is-scrolled', window.scrollY > 10);
       };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
@@ -586,7 +593,7 @@
               io.unobserve(e.target);
             }
           }
-        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+        }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
         revealEls.forEach(el => io.observe(el));
       }
 
@@ -596,13 +603,11 @@
         buttons.forEach((btn) => {
           btn.addEventListener('click', () => {
             const expanded = btn.getAttribute('aria-expanded') === 'true';
-            // Close others for crisp UX
             buttons.forEach(b => {
               b.setAttribute('aria-expanded', 'false');
               const p = b.nextElementSibling;
               if (p) p.hidden = true;
             });
-            // Toggle current
             btn.setAttribute('aria-expanded', String(!expanded));
             const panel = btn.nextElementSibling;
             if (panel) panel.hidden = expanded;
@@ -623,8 +628,6 @@
         overlay.hidden = false;
         requestAnimationFrame(() => overlay.classList.add('is-open'));
         document.body.classList.add('menu-open');
-
-        // Focus first link for accessibility
         const first = nav.querySelector('a');
         first && first.focus({ preventScroll: true });
       };
@@ -647,18 +650,15 @@
 
       overlay?.addEventListener('click', closeMenu);
 
-      // Close on nav click (mobile)
       nav?.addEventListener('click', (e) => {
         const t = e.target;
         if (t && t.matches('a')) closeMenu();
       });
 
-      // Escape to close
       window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isOpen()) closeMenu();
       });
 
-      // Tiny focus trap when menu open
       window.addEventListener('keydown', (e) => {
         if (!isOpen() || e.key !== 'Tab') return;
         const focusables = nav.querySelectorAll(focusableSel);
@@ -672,7 +672,6 @@
         }
       });
 
-      // Mark loaded for subtle intro
       window.addEventListener('load', () => {
         document.body.classList.add('is-loaded');
       }, { once: true });
